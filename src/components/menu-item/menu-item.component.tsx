@@ -8,10 +8,14 @@ interface IProps {
 
 export const MenuItem: React.FC<IProps> = ({ section }) => {
   return (
-    <div className='menu-item'>
+    <div className={`menu-item ${section.size}`}>
+      <div
+        className='background-image'
+        style={{ backgroundImage: `url(${section.imageUrl})` }}
+      />
       <div className='content'>
-        <h1 className='title'>{section.title}</h1>
-        <h1 className='title'>Shop Now</h1>
+        <h1 className='title'>{section.title.toUpperCase()}</h1>
+        <h1 className='subtitle'>Shop Now</h1>
       </div>
     </div>
   );
